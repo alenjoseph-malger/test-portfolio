@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #bb86fc;
+            --secondary: #03dac6;
+            --text-light: #e0e0e0;
+            --text-gray: #a0a0a0;
+            --font-main: 'Poppins', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: rgba(18, 18, 18, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 600; color: var(--primary); }
+        
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 30px; max-width: 600px; }
+
+        .btn {
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: #000;
+            font-weight: 600;
+            border-radius: 5px;
+            border: 2px solid var(--primary);
+        }
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        /* --- SECTIONS COMMON --- */
+        section { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 60px; font-size: 2rem; }
+        .section-title span { border-bottom: 3px solid var(--secondary); padding-bottom: 5px; }
+
+        /* --- SKILLS --- */
+        .skills-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .skill-tag {
+            background: var(--card-bg);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            border: 1px solid #333;
+        }
+
+        /* --- PROJECTS --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid #333;
+        }
+
+        .project-card:hover { transform: translateY(-5px); }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background-color: #333; /* Placeholder color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+        }
+
+        .project-info { padding: 20px; }
+        .project-info h3 { margin-bottom: 10px; color: var(--secondary); }
+        .project-info p { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 15px; }
+        .project-links a { margin-right: 15px; font-size: 0.9rem; color: var(--primary); }
+
+        /* --- CONTACT --- */
+        .contact { text-align: center; background-color: var(--card-bg); }
+        .socials { margin-top: 30px; font-size: 1.5rem; }
+        .socials a { margin: 0 15px; color: var(--text-gray); }
+        .socials a:hover { color: var(--primary); }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { flex-direction: column; padding: 20px; }
+            .nav-links { margin-top: 20px; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Portfo<span style="color:var(--secondary)">lio.</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Hi, I'm <span>Your Name</span></h1>
+        <p>A passionate Developer & Designer building immersive digital experiences.</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title"><span>Technical Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-tag">HTML5 & CSS3</div>
+            <div class="skill-tag">JavaScript</div>
+            <div class="skill-tag">React / Vue</div>
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">UI/UX Design</div>
+            <div class="skill-tag">Git & GitHub</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title"><span>Featured Projects</span></h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-code fa-3x"></i> </div>
+                <div class="project-info">
+                    <h3>Project Title One</h3>
+                    <p>A brief description of this project. What tech stack did you use? What problem did it solve?</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-gamepad fa-3x"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title Two</h3>
+                    <p>Description of your second project. Mention specific frameworks or tools used here.</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-mobile-alt fa-3x"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title Three</h3>
+                    <p>Description of your third project. Focus on the impact or unique features.</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title"><span>Get In Touch</span></h2>
+        <p>I am currently open to new opportunities. Let's build something together.</p>
+        
+        <div class="socials">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        
+        <br>
+        <p style="font-size: 0.8rem; margin-top: 20px; color: #555;">© 2024 Your Name. All rights reserved.</p>
+    </section>
+
+</body>
+</html>
