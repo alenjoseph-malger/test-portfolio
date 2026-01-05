@@ -12,8 +12,13 @@
         :root {
             --bg-color: #121212;
             --card-bg: #1e1e1e;
-            --primary: #bb86fc;
-            --secondary: #03dac6;
+            
+            /* CHANGED: Primary color is now RED */
+            --primary: #ff2e2e; 
+            
+            /* Secondary color (Cyan) - kept as accent, or change to white if you prefer */
+            --secondary: #03dac6; 
+            
             --text-light: #e0e0e0;
             --text-gray: #a0a0a0;
             --font-main: 'Poppins', sans-serif;
@@ -67,7 +72,7 @@
         .btn {
             padding: 12px 30px;
             background-color: var(--primary);
-            color: #000;
+            color: #fff; /* White text looks better on red */
             font-weight: 600;
             border-radius: 5px;
             border: 2px solid var(--primary);
@@ -80,7 +85,7 @@
         /* --- SECTIONS COMMON --- */
         section { padding: 80px 10%; }
         .section-title { text-align: center; margin-bottom: 60px; font-size: 2rem; }
-        .section-title span { border-bottom: 3px solid var(--secondary); padding-bottom: 5px; }
+        .section-title span { border-bottom: 3px solid var(--primary); padding-bottom: 5px; }
 
         /* --- SKILLS --- */
         .skills-grid {
@@ -95,6 +100,11 @@
             border-radius: 50px;
             font-size: 0.9rem;
             border: 1px solid #333;
+            transition: 0.3s;
+        }
+        .skill-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         /* --- PROJECTS --- */
@@ -112,7 +122,7 @@
             border: 1px solid #333;
         }
 
-        .project-card:hover { transform: translateY(-5px); }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--primary); }
 
         .project-img {
             width: 100%;
@@ -125,9 +135,10 @@
         }
 
         .project-info { padding: 20px; }
-        .project-info h3 { margin-bottom: 10px; color: var(--secondary); }
+        .project-info h3 { margin-bottom: 10px; color: #fff; }
         .project-info p { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 15px; }
         .project-links a { margin-right: 15px; font-size: 0.9rem; color: var(--primary); }
+        .project-links a:hover { text-decoration: underline; }
 
         /* --- CONTACT --- */
         .contact { text-align: center; background-color: var(--card-bg); }
@@ -146,7 +157,7 @@
 <body>
 
     <nav>
-        <div class="logo">Portfo<span style="color:var(--secondary)">lio.</span></div>
+        <div class="logo">Portfo<span style="color:var(--primary)">lio.</span></div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
